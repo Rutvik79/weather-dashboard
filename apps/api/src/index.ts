@@ -3,6 +3,8 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.routes";
+import citiesRoutes from "./routes/cities.routes";
+import weatherRoutes from "./routes/weather.routes";
 
 dotenv.config();
 
@@ -18,6 +20,8 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
+app.use("/api/cities", citiesRoutes);
+app.use("/api/weather", weatherRoutes);
 
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
