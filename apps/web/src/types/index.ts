@@ -27,6 +27,8 @@ export interface WeatherData {
   condition: string;
   description: string;
   icon: string;
+  lat: number;
+  lon: number;
 }
 
 export interface AuthResponse {
