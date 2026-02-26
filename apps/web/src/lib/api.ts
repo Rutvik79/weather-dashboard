@@ -4,6 +4,7 @@ export async function apiFetch<T>(
   endpoint: string,
   options: RequestInit = {},
 ): Promise<T> {
+  const url = new URL(endpoint, BASE_URL).toString();
   const res = await fetch(`${BASE_URL}${endpoint}`, {
     ...options,
     credentials: "include", // sends cookies automatically
